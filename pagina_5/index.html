@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Alice it's you..</title>
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+
+		<script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+	
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+		
+	</head>
+	<body class="demo-1">
+		<main>
+
+			
+			<div class="frame">
+				<div 
+					id="gl" 
+					data-imageOriginal="img\alice.jpg" 
+					data-imageDepth="img\alice-map.jpg" 
+					data-horizontalThreshold="35" 
+					data-verticalThreshold="25">
+				</div>	
+
+				<div class="texto" >
+					<p><span id="texto1"></span>
+						<a id="continuar" href="#">¿Listo para continuar?</a>
+						<a id="muse" href="https://www.youtube.com/watch?v=-emB4nYjTpc" target="_blank">Origen of Simmetry</a></p>
+					<p><span id="texto2"></span><a id="robot" href="/pagina_6/index.html">Sí, un robot..</a></p>
+									
+				</div>
+
+			
+			
+		
+			</div>
+		</main>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.min.js"></script>
+		
+		
+		<script>
+		
+		accesLink = document.getElementById("muse");
+		accesLink.addEventListener("click", goBack5);
+		
+		ContinuarLik = document.getElementById("continuar");
+		ContinuarLik.addEventListener("click", continuar);
+
+		gsap.defaults({ease: "none"});
+
+		let preloaderAnim = new TimelineMax();
+		
+
+		const tl = gsap.timeline({});
+		tl.to("#texto1", {duration: 2, text:"-¿Leíste Alicia en el país de las maravillas?", delay:2, onComplete:goBack});
+	
+		
+		function goBack(){
+			setTimeout(function(){$("#texto1").empty();}, 3000);
+			tl.to("#texto1", {duration: 2, text:"Ese libro es una guía de desprogramación. No lo digo yo, sino RAW.", delay:4, onComplete:goBack2});
+		}
+
+		function goBack2(){
+			setTimeout(function(){$("#texto1").empty();}, 3000);
+			tl.to("#texto1", {duration: 4, text:"En un momento de la novela todos los personajes comprenden su carácter ilusorio, y hacen complice al lector de ello.", delay:4});
+			tl.to("#texto2", {duration: 4, text:"Quien realmente lee el libro es Alicia. El lector participa de ese mundo como un espectador, quizás algo confundido, que por momentos se ve engullido en esa realidad.", delay:4, onComplete:goBack3});
+		}
+
+		function goBack3(){
+			setTimeout(function(){$("#texto1").empty();}, 4000);
+			setTimeout(function(){$("#texto2").empty();}, 4000);
+			tl.to("#texto1", {duration: 4, text:"La mente que se encuentra detrás de todos los pensamientos, de todas las opiones y contradicciones es innacesible mientras no se ejercite a todas las voces.", delay:5});
+			tl.to("#texto2", {duration: 3, text:"'Todo tiene una moraleja, solo falta saber encontrarla.'", delay:5, onComplete:goBack4});
+		}
+
+		function goBack4(){
+			setTimeout(function(){$("#texto1").empty();}, 4000);
+			setTimeout(function(){$("#texto2").empty();}, 4000);
+			
+			tl.to("#texto1", {duration: 2, text:"-¿Escuchaste alguna vez el album", delay:5});
+			setTimeout(function(){$("#muse").css("display","block")}, 7000);	
+		}
+
+		function goBack5(){
+			setTimeout(function(){$("#texto1").empty();}, 3000);
+			setTimeout(function(){$("#texto2").empty();}, 3000);
+			setTimeout(function(){$("#muse").css("display","none")}, 3000);
+			setTimeout(function(){$("#continuar").css("display","block")}, 4000);
+			
+	
+		}
+
+		function continuar(){
+			$("#continuar").css("display","none");
+			tl.to("#texto1", {duration: 3, text:"Ese disco tiene algo como descompuesto que se acentúa con el correr de las canciones.", delay:3});
+			tl.to("#texto2", {duration: 2, text:"Es algo muy sútil pero está allí.", delay:3, onComplete:goBack6});
+		}
+
+		function goBack6(){
+			setTimeout(function(){$("#texto1").empty();}, 3000);
+			setTimeout(function(){$("#texto2").empty();}, 3000);
+	
+			tl.to("#texto1", {duration: 3, text:"-Todos tenemos algo descompuesto, que a veces suena como ese disco.", delay:4});
+			tl.to("#texto2", {duration: 2, text:"-Eso que decís parece algo depresivo.", delay:4, onComplete:goBack7});
+	
+		}
+
+		function goBack7(){
+			setTimeout(function(){$("#texto1").empty();}, 3000);
+			setTimeout(function(){$("#texto2").empty();}, 3000);
+			
+			tl.to("#texto1", {duration: 3, text:"-¿Depresivo? Preferible eso a ser un robot.", delay:4});
+			tl.to("#texto2", {duration: 2, text:"-¿Un robot?", delay:4, onComplete:goBack8});
+	
+		}
+
+		
+		
+		function goBack8(){
+			setTimeout(function(){$("#texto1").empty();}, 2000);
+			setTimeout(function(){$("#texto2").empty();}, 2000);
+			setTimeout(function(){$("#robot").css("display","block")}, 3000);
+			
+		}
+
+		window.onbeforeunload = function () {
+  			window.scrollTo(0, 0);
+		}
+			
+
+		</script>
+
+		<script src="js/app.js"></script>
+
+		
+		
+	</body>
+</html>

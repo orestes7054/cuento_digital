@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="3D Viewer" />
+    <title>Ingresar en el tiempo o salir de él</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="main.css" rel="stylesheet" type="text/css" /> 
+
+    <script src="libs/dependencies/three.js"></script>
+    <script src="libs/dependencies/OrbitControls.js"></script>
+    <script src="libs/dependencies/jquery.js"></script>
+    
+
+    <!-- globals needs to be included before every shader -->
+    <script src="libs/globals.js"></script>
+
+    <script src="libs/geometries/line.js"></script>
+    <script src="libs/geometries/quad.js"></script>
+ 
+    <script src="libs/shaders/shaderpass.js"></script>
+    <script src="libs/shaders/postproc.js"></script>
+    <script src="libs/shaders/line.js"></script>
+    <script src="libs/shaders/quad.js"></script>
+
+    <!-- utils needs to be placed BEFORE curlNoise.js -->
+    <script src="libs/utils.js"></script>
+
+    <script src="libs/perlinNoise.js"></script>
+    <script src="libs/curlNoise.js"></script>
+
+    <script src="libs/createScene.js"></script>
+    <script src="libs/main.js"></script>
+
+</head>
+<body>
+    <div class="frame">
+        <h1 class="frame__title">Lo que simplmente necesitaba era explorar el tiempo.</h1>
+        <p>Si me acerco mucho, me sumerjo en él, y veo estrellas como en una noche despejada.</p>
+        <p>Si me alejo demasiado solo veo oscuridad.</p>
+        <p>El tiempo es igual a una esfera.</p>
+        <p><i>"Los  místicos,  en  análogo  trance,  prodigan  los  emblemas:  para significar la divinidad, 
+            un persa habla de un pájaro que de algún modo es todos los pájaros; Alanus  de  Insulis,  
+            de  una  esfera  cuyo  centro  está  en  todas  partes  y  la  circunferencia  en ninguna;  
+            Ezequiel,  de  un  ángel  de  cuatro  caras  que  a  un  tiempo  se  dirige  al  Oriente  y  al Occidente,  
+            al  Norte  y  al  Sur."</i></p>
+        <p>Con el enfoque exacto logro ver sus grietas, y allí me encuentro.
+            Navegando.
+        </p>
+
+    </div>
+    <div class="controls active">
+        <p>Presiona estas teclas para explorar <span>o</span> o <span>p</span></p>
+        <p><span>k</span>, <span> l</span> </p>
+        <p><span>v</span>,<span> b</span></p>
+        <p><span>u</span>,<span> i, m</span></p>
+        <p>Presiona <span>h</span> para esconder este menú</p>
+    </div>
+</body>
+</html>
